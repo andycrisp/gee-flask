@@ -26,12 +26,14 @@ def make_authorized_get_request(endpoint, audience):
 
     req.add_header("Authorization", f"Bearer {id_token}")
     response = urllib.request.urlopen(req)
-    
-print(make_authorized_get_request)
+
+
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    print("attempting...")
+    print(make_authorized_get_request)
     return 'Hello, Worlds!'
