@@ -5,11 +5,16 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
-geocord = [11.589411596780081, 48.149503277976365]
 
 @app.route('/')
-def processSomeData(geocord):
-    ee.Initialize()
+def processSomeData():
+
+    print('started process')
+    
+    geocord = [11.589411596780081, 48.149503277976365]
+
+    print('Initialising...')
+    ee.Initialize()    
 
     # Create Earth Engine point
     point = ee.Geometry.Point(geocord)
@@ -25,6 +30,7 @@ def processSomeData(geocord):
 
     scale = 1000  # scale in meters
 
+    print('Getting info...')
     # Print the land cover type at the point.
     land_cover = lc.first().sample(point, scale).first().get('LC_Type1').getInfo()
     
