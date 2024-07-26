@@ -1,8 +1,8 @@
 # A Simple Flask app, deployed to Cloud Run that calls Earth Engine without a user login required or without downloading SA keys
 
-This contains a simple flask app. Main.py returns the land cover for a specific hardcoded location for a hard-coded date range when called on the root endpoint.  
+This contains a simple flask app. Main.py returns the land cover for a specific hardcoded location for a hard-coded date range when called.
 
-## Set Up prooject
+## Set Up project
 1. Create and enable project for Earth Engine: https://developers.google.com/earth-engine/cloud/earthengine_cloud_project_setup
 2. Create Service Account to call Earth Engine: https://cloud.google.com/iam/docs/service-accounts-create 
 3. Give Service Account relevant Earth Engine permissions: https://developers.google.com/earth-engine/cloud/roles_permissions
