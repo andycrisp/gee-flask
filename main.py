@@ -37,4 +37,4 @@ def processSomeData():
     print('Land cover value at urban point is:', land_cover)
 
 
-    return land_cover
+    return str(land_cover)
