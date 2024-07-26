@@ -19,11 +19,11 @@ def processSomeData():
     # Create Earth Engine point
     point = ee.Geometry.Point(geocord)
 
-    # Get today's date
-    f_date = datetime.today().strftime('%Y-%m-%d')
+    # Initial date of interest (inclusive).
+    i_date = '2024-07-26'
 
-    # Calculate the start date (one month prior)
-    i_date = (f_date - timedelta(days=30)).strftime('%Y-%m-%d')
+    # Final date of interest (exclusive).
+    f_date = '2024-06-26'
 
     # Import the MODIS land cover collection.
     lc = ee.ImageCollection('MODIS/006/MCD12Q1')
@@ -32,7 +32,7 @@ def processSomeData():
 
     print('Getting info...')
     # Print the land cover type at the point.
-    land_cover = lc.first().sample(point, scale).first().get('LC_Type1').getInfo()
+    #land_cover = lc.first().sample(point, scale).first().get('LC_Type1').getInfo()
     
     print('Land cover value at urban point is:', land_cover)
 
