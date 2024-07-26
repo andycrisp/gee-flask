@@ -32,7 +32,7 @@ def processSomeData():
 
     print('Getting info...')
     # Print the land cover type at the point.
-    #land_cover = lc.first().sample(point, scale).first().get('LC_Type1').getInfo()
+    land_cover = lc.first().sample(point, scale).first().get('LC_Type1').getInfo()
     
     print('Land cover value at urban point is:', land_cover)
 
